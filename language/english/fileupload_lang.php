@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['fileupload_manage']			= 'Manage fileupload';
+$lang['fileupload_edit']				= 'Edit';
+$lang['fileupload_true']				= 'True';
+$lang['fileupload_false']				= 'False';
+$lang['fileupload_create']			= 'Create';
+$lang['fileupload_list']				= 'List';
+$lang['fileupload_new']				= 'New';
+$lang['fileupload_edit_text']			= 'Edit this to suit your needs';
+$lang['fileupload_no_records']			= 'There aren\'t any fileupload in the system.';
+$lang['fileupload_create_new']			= 'Create a new fileupload.';
+$lang['fileupload_create_success']			= 'fileupload successfully created.';
+$lang['fileupload_create_failure']			= 'There was a problem creating the fileupload: ';
+$lang['fileupload_create_new_button']			= 'Create New fileupload';
+$lang['fileupload_invalid_id']			= 'Invalid fileupload ID.';
+$lang['fileupload_edit_success']			= 'fileupload successfully saved.';
+$lang['fileupload_edit_failure']			= 'There was a problem saving the fileupload: ';
+$lang['fileupload_delete_success']			= 'record(s) successfully deleted.';
+$lang['fileupload_delete_failure']			= 'We could not delete the record: ';
+$lang['fileupload_delete_error']			= 'You have not selected any records to delete.';
+$lang['fileupload_actions']			= 'Actions';
+$lang['fileupload_cancel']			= 'Cancel';
+$lang['fileupload_delete_record']			= 'Delete this fileupload';
+$lang['fileupload_delete_confirm']			= 'Are you sure you want to delete this fileupload?';
+$lang['fileupload_edit_heading']			= 'Edit fileupload';
+
+// Activities
+$lang['fileupload_act_create_record']			= 'Created record with ID';
+$lang['fileupload_act_edit_record']			= 'Updated record with ID';
+$lang['fileupload_act_delete_record']			= 'Deleted record with ID';
