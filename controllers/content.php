@@ -53,8 +53,8 @@ class content extends Admin_Controller {
 		}
 
 		$records = $this->fileupload_model->find_all();
-
-		Template::set('records', $records);
+		Template::set('fileupload', $records);
+		
 		Template::set('toolbar_title', 'Manage fileupload');
 		Template::render();
 	}
@@ -172,22 +172,32 @@ class content extends Admin_Controller {
 			An INT id for successful inserts. If updating, returns TRUE on success.
 			Otherwise, returns FALSE.
 	*/
-	private function save_fileupload($type='insert', $id=0)
-	{
-		if ($type == 'update') {
-			$_POST['id'] = $id;
-		}
+	private function save_fileupload($type='insert', $id=0) {
 
+		if ($type == 'update') { $_POST['id'] = $id; }
 		
-
-		if ($this->form_validation->run() === FALSE)
-		{
-			return FALSE;
-		}
-
+		//if ($this->form_validation->run() === FALSE) { return FALSE; }
 		// make sure we only pass in the fields we want
 		
 		$data = array();
+		$data['image_field_name'] = $this->input->post('image_field_name');
+				
+		// fileupload
+		$config['upload_path'] = realpath( FCPATH.'assets/images/');
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = '11110';
+		$config['max_width'] = '11110';
+		$config['max_height'] = '11110';
+		$this->load->library('upload', $config);
+		
+		if (!$this->upload->do_upload('image_field_name')) {
+			$this->error = $this->upload->display_errors();
+		    return FALSE;
+		} else {
+			$img_data = $this->upload->data();
+			$data['image_field_name'] = $img_data['image_field_name'];
+		}		
+		// fileupload
 
 		if ($type == 'insert')
 		{
